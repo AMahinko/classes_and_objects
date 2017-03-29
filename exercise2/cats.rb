@@ -16,9 +16,12 @@ class Cats
 
   end
 
-
+  def meow
+    puts "I'm #{@name} and I eat #{@preferred_food} at #{@meal_time}."
+  end
 
 end
+
 
 
 london = Cats.new("London", "Fish", 8)
@@ -26,3 +29,8 @@ london = Cats.new("London", "Fish", 8)
 charon = Cats.new("Charon", "Milk", 9)
 
 molly = Cats.new("Molly", "kibble", 8)
+
+
+charon.meow
+london.meow
+molly.meow
