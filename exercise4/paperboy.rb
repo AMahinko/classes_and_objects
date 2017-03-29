@@ -15,17 +15,21 @@ class Paperboy
 
   def deliver(start, finish)
     distance = finish - start + 1
-    case distance
-    when distance < quota
+    puts distance
+    puts quota
+    if distance < quota
       @money += (distance * 0.25)
       @money -= 2.00
-    when distance > quota
+    elsif distance > quota
       difference = distance - quota
-      @money += (0.25*quota) * (0.5 * difference)
-    when distance == quota
+      @money += (0.25*quota) + (0.5 * difference)
+    else
       @money += (distance * 0.25)
     end
+    puts money
   end
+
+
 
 
 
