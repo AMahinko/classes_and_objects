@@ -15,10 +15,9 @@ class Paperboy
   end
 
   def deliver(start, finish)
+
     distance = finish - start + 1
-    puts distance
     distance = distance * -1 + 2 if distance < 0
-    puts distance
 
 
     @total_papers += distance
