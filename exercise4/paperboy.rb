@@ -16,10 +16,14 @@ class Paperboy
 
   def deliver(start, finish)
     distance = finish - start + 1
-    if distance < 0
-      distance = distance * -1 + 2
-    end
+    puts distance
+    distance = distance * -1 + 2 if distance < 0
+    puts distance
+
+
     @total_papers += distance
+
+
     if distance < quota
       @money += (distance * 0.25) - 2
     elsif distance > quota
@@ -28,6 +32,7 @@ class Paperboy
     else
       @money += (distance * 0.25)
     end
+
   end
 
   def report
