@@ -1,9 +1,0 @@
-class Paperboy
-
-  def initialize(name)
-    @name = name
-    @exp = 0
-    @money = 0
-  end
-
-end
