@@ -4,9 +4,10 @@ class Paperboy
     @name = name
     @exp = 0
     @money = 0.00
+    @total_papers = 0.to_i
   end
 
-  attr_reader :name, :exp, :money
+  attr_reader :name, :exp, :money, :total_papers
 
 
   def quota
@@ -14,23 +15,21 @@ class Paperboy
   end
 
   def deliver(start, finish)
+    puts @total_papers
     distance = finish - start + 1
-    puts distance
-    puts quota
+    @total_papers += distance
+    puts @total_papers
     if distance < quota
-      @money += (distance * 0.25)
-      @money -= 2.00
+      @money += (distance * 0.25) - 2
     elsif distance > quota
       difference = distance - quota
       @money += (0.25*quota) + (0.5 * difference)
     else
       @money += (distance * 0.25)
     end
-    puts money
   end
 
-
-
-
-
+  def report
+    puts "My name is #{@name}, I delivered #{@total_papers} papers and I made #{@money} so far."
+  end
 end
